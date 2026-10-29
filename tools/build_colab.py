@@ -176,6 +176,10 @@ for d in ["src/filaments", "tools", "data", "runs", "submissions", "reports/figu
 os.chdir(WORK)
 sys.path.insert(0, f"{WORK}/src")
 os.environ["PYTHONPATH"] = f"{WORK}/src"
+# Python caches each folder's file list and refreshes it only when the folder's mtime changes; Google
+# Drive does not reliably update it, so modules written by later %%writefile cells would stay invisible.
+import importlib
+get_ipython().events.register("pre_run_cell", lambda info: importlib.invalidate_caches())
 RUNS_DIR = f"{WORK}/runs"
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 print("work dir:", WORK, "| device:", DEVICE)
