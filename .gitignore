@@ -1,0 +1,18 @@
+# environment / caches
+.venv/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.kaggle_build/
+
+# competition data: may not be redistributed (Kaggle rules); download with kagglehub
+data/MAGFiLO_1.0_Kaggle_2026
+data/processed/
+
+# trained runs (1.4 GB of checkpoints): shared via Google Drive
+runs/
+
+# course material
+COS711-A2.pdf
+COS711_A2_Presentation_Template.pptx

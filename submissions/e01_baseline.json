@@ -1,0 +1,14 @@
+{
+  "images": 180,
+  "images_with_predictions": 177,
+  "rows": 1251,
+  "post": {
+    "threshold": 0.5,
+    "min_area": 400
+  },
+  "tta": false,
+  "n_models": 5,
+  "total_sec": 87.03421087500465,
+  "sec_per_image": 0.4835233937500258,
+  "device": "mps"
+}
